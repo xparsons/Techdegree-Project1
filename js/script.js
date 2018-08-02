@@ -23,22 +23,20 @@ function getRandomQuote(array) {
 	
 }
 
-
 // This function prints the quote to the screen
 function printQuote() {
 	let getQuotes = getRandomQuote(quotes);
 	let showQuote = '';
 	showQuote +='<p class="quote">' + getQuotes.quote + ' ';
-	showQuote +='<p class="source">' + getQuotes.source + '</p>';
+	showQuote +='<p class="source">' + getQuotes.source;
 	//Conditional statements if quotes have more properties
 	if ( getQuotes.citation && getQuotes.year  ) {
-		showQuote +='<span class="citation">' + getQuotes.citation + '</span><span class="year">' + getQuotes.year + '</span>';
+		showQuote += '<span class="citation">' + getQuotes.citation + '</span>' + ', ' + getQuotes.year + '</p>';
 	} else {
 	showQuote += '</p>';
 	}
 	document.getElementById('quote-box').innerHTML = showQuote;
 }
-	
 
 
 // This event listener will respond to "Show another quote" button clicks
