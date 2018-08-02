@@ -33,9 +33,7 @@ function printQuote() {
 	//Conditional statements if quotes have more properties
 	if ( getQuotes.citation && getQuotes.year  ) {
 		showQuote +='<span class="citation">' + getQuotes.citation + '</span><span class="year">' + getQuotes.year + '</span>';
-		} else {
-			document.getElementById('quote-box').innerHTML = showQuote;
-		}
+	}
 	document.getElementById('quote-box').innerHTML = showQuote;
 }
 	
