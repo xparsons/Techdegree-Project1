@@ -28,11 +28,13 @@ function getRandomQuote(array) {
 function printQuote() {
 	let getQuotes = getRandomQuote(quotes);
 	let showQuote = '';
-	showQuote +='<p class="quote">' + getQuotes.quote + '</p>';
+	showQuote +='<p class="quote">' + getQuotes.quote + ' ';
 	showQuote +='<p class="source">' + getQuotes.source + '</p>';
 	//Conditional statements if quotes have more properties
 	if ( getQuotes.citation && getQuotes.year  ) {
 		showQuote +='<span class="citation">' + getQuotes.citation + '</span><span class="year">' + getQuotes.year + '</span>';
+	} else {
+	showQuote += '</p>';
 	}
 	document.getElementById('quote-box').innerHTML = showQuote;
 }
