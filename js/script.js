@@ -18,22 +18,23 @@ let quotes = [
 // Create the getRandomQuote function and name it getRandomQuote
 // This function will create a random number from 0 - 4
 function getRandomQuote(array) {
-	let randomValue = Math.floor(Math.random() * quotes );
-	return array[randomValue];
+	let randomQuote = array[Math.floor(Math.random() * quotes.length )];
+	return randomQuote;
 	
 }
-
 
 
 // Create the printQuote funtion and name it printQuote
 function printQuote() {
 	let getQuotes = getRandomQuote(quotes);
+	console.log(getQuotes);
+
+	/*
 	let showQuote;
 	showQuote = document.getElementById('quote-box').innerHTML = getRandomQuote(quotes);
+	*/
 }
 	
-
-
 
 
 // This event listener will respond to "Show another quote" button clicks
