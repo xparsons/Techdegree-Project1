@@ -1,6 +1,6 @@
 // FSJS - Random Quote Generator
 
-// Create the array of quote objects and name it quotes
+// Array of quote objects
 let quotes = [
 	{quote: 'What are you trying to tell me? That I can dodge bullets?', source: 'Neo', citation: 'The Matrix', year: 1999},
 	
@@ -8,7 +8,7 @@ let quotes = [
 	
 	{quote: 'Let us make our future now, and let us make our dreams tomorrow’s reality.', source: 'Malala Yousafzai'},
 	
-	{quote: 'ask not what your country can do for you — ask what you can do for your country.', source: 'John F. Kennedy', citation: 'Speech', year: '1961'},
+	{quote: 'Ask not what your country can do for you — ask what you can do for your country.', source: 'John F. Kennedy', citation: 'Speech', year: '1961'},
 	
 	{quote: 'Where we\'re going, we don\'t need roads', source: 'Dr. Emmett Brown', citation: 'Back to the Future', year: '1985'},
 	
@@ -24,15 +24,19 @@ function getRandomQuote(array) {
 }
 
 
-// Create the printQuote funtion and name it printQuote
+// This function prints the quote to the screen
 function printQuote() {
 	let getQuotes = getRandomQuote(quotes);
-	console.log(getQuotes);
-
-	/*
-	let showQuote;
-	showQuote = document.getElementById('quote-box').innerHTML = getRandomQuote(quotes);
-	*/
+	let showQuote = '';
+	showQuote +='<p class="quote">' + getQuotes.quote + '</p>';
+	showQuote +='<p class="source">' + getQuotes.source + '</p>';
+	//Conditional statements if quotes have more properties
+	if ( getQuotes.citation && getQuotes.year  ) {
+		showQuote +='<span class="citation">' + getQuotes.citation + '</span><span class="year">' + getQuotes.year + '</span>';
+		} else {
+			document.getElementById('quote-box').innerHTML = showQuote;
+		}
+	document.getElementById('quote-box').innerHTML = showQuote;
 }
 	
 
