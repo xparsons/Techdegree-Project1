@@ -1,7 +1,10 @@
+
+
 // FSJS - Random Quote Generator
 
 // Array of quote objects
-let quotes = [
+
+const quotes = [
 	{quote: 'What are you trying to tell me? That I can dodge bullets?', source: 'Neo', citation: 'The Matrix', year: 1999},
 	
 	{quote: 'Keep your face always toward the sunshine—and shadows will fall behind you.', source: 'Walt Whitman'},
