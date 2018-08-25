@@ -2,6 +2,8 @@
 
 // FSJS - Random Quote Generator
 
+const button = document.getElementById('loadQuote');
+
 // Array of quote objects
 
 const quotes = [
@@ -23,7 +25,13 @@ const quotes = [
 function getRandomQuote(array) {
 	let randomQuote = array[Math.floor(Math.random() * quotes.length )];
 	return randomQuote;
-	
+}
+
+// Function that assigns new background color
+function newBgColor() {
+	backgroundColors = ['#E91E63', '#F44336', '#009688','#4CAF50', '#3F51B5', '#03A9F4'];
+	randomBgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+	document.getElementById('bg').style.background = randomBgColor;
 }
 
 // This function prints the quote to the screen
@@ -39,7 +47,17 @@ function printQuote() {
 	showQuote += '</p>';
 	}
 	document.getElementById('quote-box').innerHTML = showQuote;
+	newBgColor();
 }
+
+// Changes quote every 8 seconds
+let autoChangeTimer = setInterval(printQuote, 8000);
+
+// Resets timer on button click
+button.addEventListener('click', () => {
+	clearInterval(autoChangeTimer);
+	autoChangeTimer = setInterval(printQuote, 8000);
+});
 
 
 // This event listener will respond to "Show another quote" button clicks
